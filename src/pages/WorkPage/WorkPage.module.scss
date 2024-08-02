@@ -1,0 +1,167 @@
+@import '../../styles/variables.scss';
+
+.work {
+  padding: 224px 0 160px;
+
+  &__container {
+    max-width: 1430px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: $font-weight-300;
+    font-size: $font-size-128;
+    line-height: $line-height-100;
+  }
+
+  &__descr {
+    max-width: 600px;
+    margin: 0 auto 96px;
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-300;
+    font-size: $font-size-24;
+    line-height: $line-height-150;
+    text-align: center;
+    color: $text-color-muted;
+  }
+
+  &__cardsGrid {
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &__card {
+    position: relative;
+    max-width: 684px;
+    cursor: pointer;
+    color: $text-сolor-main;
+    text-decoration: none;
+
+    &:focus-visible {
+      .work__cardCircle {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .work__cardCircle {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        .work__cardCircle {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+
+  &__cardCircle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    backdrop-filter: $backdrop-filter-main;
+    background-color: $background-color-secondary;
+    border: $border-main;
+    border-radius: 100%;
+    background-image: url('../../images/icons/arrow-up-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+
+    @media(hover: hover) {
+      &:hover {
+        background-color: $background-color-light;
+        background-image: url('../../images/icons/arrow-up-right-dark.svg');
+      }
+    }
+  }
+
+   &__cardImg {
+    max-width: 684px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: $border-radius-2;
+    border: $border-main;
+   }
+
+   &__cardDescrBlock {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 93%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border: $border-main;
+    border-radius: $border-radius-2;
+    backdrop-filter: $backdrop-filter-main;
+    background-color: $background-color-secondary;
+
+    span:nth-child(1) {
+      font-weight: $font-weight-300;
+      font-size: $font-size-24;
+      line-height: $line-height-130;
+      letter-spacing: $letter-spacing-4;
+    }
+    span:nth-child(2) {
+      font-weight: $font-weight-300;
+      font-size: $font-size-13;
+      line-height: $line-height-160;
+      letter-spacing: $letter-spacing-12;
+      text-transform: uppercase;
+    }
+   }
+}
+
+
+
+@media (max-width: 1450px) {
+  .work {
+
+    &__cardsGrid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+@media (max-width: 650px) {
+  .work {
+    padding: 110px 0 80px;
+  }
+}
+@media (max-width: 450px) {
+  .work {
+
+    &__title {
+      font-size: $font-size-64;
+    }
+
+    &__descr {
+      font-size: $font-size-16;
+      margin-bottom: 45px;
+    }
+  }
+}

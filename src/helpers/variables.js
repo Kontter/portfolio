@@ -1,0 +1,6 @@
+export const SERVICES = 'Services'
+export const HOME = 'Home'
+export const WORK = 'Work'
+export const ABOUT = 'About'
+export const BLOG = 'Blog'
+export const PRICING = 'Pricing'
